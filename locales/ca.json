@@ -1,0 +1,178 @@
+{
+  "app": {
+    "title": "Dashboard Docents",
+    "loading": "Carregant..."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "asignaturas": "Assignatures",
+    "cursos": "Cursos",
+    "especialidades": "Especialitats",
+    "matriz": "Matriu",
+    "anova": "ANOVA",
+    "evolucion": "Evolució"
+  },
+  "welcome": {
+    "title": "Benvingut al Dashboard",
+    "subtitle": "Carrega un arxiu CSV amb les teues qualificacions per a començar l'anàlisi",
+    "dropzone": {
+      "text": "Arrossega el teu arxiu CSV ací",
+      "hint": "o fes clic per a seleccionar",
+      "formats": "Formats suportats: .csv"
+    },
+    "or": "o",
+    "importJson": "Importar dades guardades (JSON)",
+    "noData": "No hi ha dades carregades"
+  },
+  "trimestre": {
+    "title": "Seleccionar Trimestre",
+    "label": "A quin trimestre correspon aquest CSV?",
+    "t1": "1r Trimestre",
+    "t2": "2n Trimestre",
+    "t3": "3r Trimestre",
+    "confirm": "Confirmar",
+    "cancel": "Cancel·lar"
+  },
+  "dashboard": {
+    "title": "Dashboard Global",
+    "kpi": {
+      "media": "Mitjana Global",
+      "aprobados": "% Aprovats",
+      "total": "Total Qualificacions",
+      "desviacion": "Desviació Típica"
+    },
+    "distribucion": "Distribució de Notes",
+    "percentiles": "Estadístiques",
+    "indicadores": {
+      "concentradas": "Notes concentrades",
+      "dispersas": "Notes disperses",
+      "normal": "Dispersió normal"
+    },
+    "selectEvaluacion": "Seleccionar avaluació"
+  },
+  "asignaturas": {
+    "title": "Anàlisi per Assignatura",
+    "select": "Seleccionar assignatura",
+    "all": "Totes les assignatures",
+    "comparativa": "Comparativa amb mitjana global",
+    "tabla": {
+      "asignatura": "Assignatura",
+      "n": "N",
+      "media": "Mitjana",
+      "aprobados": "% Aprovat",
+      "desviacion": "Desv."
+    }
+  },
+  "cursos": {
+    "title": "Anàlisi per Curs",
+    "select": "Seleccionar curs",
+    "all": "Tots els cursos",
+    "comparativa": "Comparativa de mitjanes per curs",
+    "tabla": {
+      "curso": "Curs",
+      "n": "N",
+      "media": "Mitjana",
+      "aprobados": "% Aprovat",
+      "desviacion": "Desv."
+    }
+  },
+  "especialidades": {
+    "title": "Anàlisi per Especialitat",
+    "select": "Seleccionar especialitat",
+    "all": "Totes les especialitats",
+    "comparativa": "Comparativa de mitjanes per especialitat",
+    "tabla": {
+      "especialidad": "Especialitat",
+      "n": "N",
+      "media": "Mitjana",
+      "aprobados": "% Aprovat",
+      "desviacion": "Desv."
+    }
+  },
+  "matriz": {
+    "title": "Matriu Curs × Especialitat",
+    "subtitle": "Fes clic en una cel·la per a veure detalls",
+    "noData": "Sense dades",
+    "filtrar": "Ocultar combinacions buides"
+  },
+  "anova": {
+    "title": "Anàlisi ANOVA",
+    "subtitle": "Diferències entre grups",
+    "resumen": "{count} de {total} assignatures mostren diferències significatives",
+    "porCursos": "Diferències entre cursos",
+    "porEspecialidades": "Diferències entre especialitats",
+    "calculable": "Calculable",
+    "noCalculable": "No calculable",
+    "diferencia": {
+      "notable": "Diferència notable",
+      "pequena": "Diferència xicoteta"
+    },
+    "tabla": {
+      "asignatura": "Assignatura",
+      "grupos": "Grups",
+      "diferencia": "Dif. Mitjanes",
+      "interpretacion": "Interpretació"
+    }
+  },
+  "evolucion": {
+    "title": "Evolució Temporal",
+    "subtitle": "Comparativa entre avaluacions",
+    "selectAsignatura": "Seleccionar assignatura",
+    "global": "Mitjana global",
+    "noMultiple": "Es necessiten almenys 2 avaluacions per a veure l'evolució",
+    "tendencia": {
+      "mejora": "Tendència positiva",
+      "empeora": "Tendència negativa",
+      "estable": "Tendència estable"
+    }
+  },
+  "evaluaciones": {
+    "title": "Gestió d'Avaluacions",
+    "lista": "Avaluacions carregades",
+    "añadir": "Afegir CSV",
+    "eliminar": "Eliminar",
+    "confirmarEliminar": "Eliminar aquesta avaluació?",
+    "vacia": "No hi ha avaluacions carregades",
+    "espacio": "Espai utilitzat",
+    "limpiar": "Netejar tot"
+  },
+  "export": {
+    "title": "Exportar Dades",
+    "json": "Exportar JSON",
+    "descripcion": "Descarrega totes les teues dades per a importar-les després"
+  },
+  "errors": {
+    "csvInvalido": "L'arxiu CSV no té el format correcte",
+    "columnasFaltantes": "Falten columnes requerides: {columns}",
+    "duplicado": "Aquesta avaluació ja està carregada",
+    "jsonInvalido": "L'arxiu JSON no és vàlid",
+    "storageLimit": "S'ha arribat al límit d'emmagatzematge",
+    "archivoVacio": "L'arxiu està buit"
+  },
+  "success": {
+    "csvCargado": "CSV carregat correctament",
+    "jsonImportado": "Dades importades correctament",
+    "evaluacionEliminada": "Avaluació eliminada",
+    "datosExportados": "Dades exportades correctament"
+  },
+  "common": {
+    "si": "Sí",
+    "no": "No",
+    "cerrar": "Tancar",
+    "guardar": "Guardar",
+    "cancelar": "Cancel·lar",
+    "confirmar": "Confirmar",
+    "todos": "Tots",
+    "notas": "Notes",
+    "media": "Mitjana",
+    "mediana": "Mediana",
+    "moda": "Moda",
+    "min": "Mín",
+    "max": "Màx",
+    "p25": "P25",
+    "p75": "P75",
+    "n": "N",
+    "aprobados": "Aprovats",
+    "suspensos": "Suspesos"
+  }
+}

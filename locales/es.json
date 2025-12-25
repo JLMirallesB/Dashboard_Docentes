@@ -1,0 +1,178 @@
+{
+  "app": {
+    "title": "Dashboard Docentes",
+    "loading": "Cargando..."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "asignaturas": "Asignaturas",
+    "cursos": "Cursos",
+    "especialidades": "Especialidades",
+    "matriz": "Matriz",
+    "anova": "ANOVA",
+    "evolucion": "Evolución"
+  },
+  "welcome": {
+    "title": "Bienvenido al Dashboard",
+    "subtitle": "Carga un archivo CSV con tus calificaciones para comenzar el análisis",
+    "dropzone": {
+      "text": "Arrastra tu archivo CSV aquí",
+      "hint": "o haz clic para seleccionar",
+      "formats": "Formatos soportados: .csv"
+    },
+    "or": "o",
+    "importJson": "Importar datos guardados (JSON)",
+    "noData": "No hay datos cargados"
+  },
+  "trimestre": {
+    "title": "Seleccionar Trimestre",
+    "label": "¿A qué trimestre corresponde este CSV?",
+    "t1": "1er Trimestre",
+    "t2": "2º Trimestre",
+    "t3": "3er Trimestre",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar"
+  },
+  "dashboard": {
+    "title": "Dashboard Global",
+    "kpi": {
+      "media": "Media Global",
+      "aprobados": "% Aprobados",
+      "total": "Total Calificaciones",
+      "desviacion": "Desviación Típica"
+    },
+    "distribucion": "Distribución de Notas",
+    "percentiles": "Estadísticas",
+    "indicadores": {
+      "concentradas": "Notas concentradas",
+      "dispersas": "Notas dispersas",
+      "normal": "Dispersión normal"
+    },
+    "selectEvaluacion": "Seleccionar evaluación"
+  },
+  "asignaturas": {
+    "title": "Análisis por Asignatura",
+    "select": "Seleccionar asignatura",
+    "all": "Todas las asignaturas",
+    "comparativa": "Comparativa con media global",
+    "tabla": {
+      "asignatura": "Asignatura",
+      "n": "N",
+      "media": "Media",
+      "aprobados": "% Aprob.",
+      "desviacion": "Desv."
+    }
+  },
+  "cursos": {
+    "title": "Análisis por Curso",
+    "select": "Seleccionar curso",
+    "all": "Todos los cursos",
+    "comparativa": "Comparativa de medias por curso",
+    "tabla": {
+      "curso": "Curso",
+      "n": "N",
+      "media": "Media",
+      "aprobados": "% Aprob.",
+      "desviacion": "Desv."
+    }
+  },
+  "especialidades": {
+    "title": "Análisis por Especialidad",
+    "select": "Seleccionar especialidad",
+    "all": "Todas las especialidades",
+    "comparativa": "Comparativa de medias por especialidad",
+    "tabla": {
+      "especialidad": "Especialidad",
+      "n": "N",
+      "media": "Media",
+      "aprobados": "% Aprob.",
+      "desviacion": "Desv."
+    }
+  },
+  "matriz": {
+    "title": "Matriz Curso × Especialidad",
+    "subtitle": "Haz clic en una celda para ver detalles",
+    "noData": "Sin datos",
+    "filtrar": "Ocultar combinaciones vacías"
+  },
+  "anova": {
+    "title": "Análisis ANOVA",
+    "subtitle": "Diferencias entre grupos",
+    "resumen": "{count} de {total} asignaturas muestran diferencias significativas",
+    "porCursos": "Diferencias entre cursos",
+    "porEspecialidades": "Diferencias entre especialidades",
+    "calculable": "Calculable",
+    "noCalculable": "No calculable",
+    "diferencia": {
+      "notable": "Diferencia notable",
+      "pequena": "Diferencia pequeña"
+    },
+    "tabla": {
+      "asignatura": "Asignatura",
+      "grupos": "Grupos",
+      "diferencia": "Dif. Medias",
+      "interpretacion": "Interpretación"
+    }
+  },
+  "evolucion": {
+    "title": "Evolución Temporal",
+    "subtitle": "Comparativa entre evaluaciones",
+    "selectAsignatura": "Seleccionar asignatura",
+    "global": "Media global",
+    "noMultiple": "Se necesitan al menos 2 evaluaciones para ver la evolución",
+    "tendencia": {
+      "mejora": "Tendencia positiva",
+      "empeora": "Tendencia negativa",
+      "estable": "Tendencia estable"
+    }
+  },
+  "evaluaciones": {
+    "title": "Gestión de Evaluaciones",
+    "lista": "Evaluaciones cargadas",
+    "añadir": "Añadir CSV",
+    "eliminar": "Eliminar",
+    "confirmarEliminar": "¿Eliminar esta evaluación?",
+    "vacia": "No hay evaluaciones cargadas",
+    "espacio": "Espacio usado",
+    "limpiar": "Limpiar todo"
+  },
+  "export": {
+    "title": "Exportar Datos",
+    "json": "Exportar JSON",
+    "descripcion": "Descarga todos tus datos para importarlos después"
+  },
+  "errors": {
+    "csvInvalido": "El archivo CSV no tiene el formato correcto",
+    "columnasFaltantes": "Faltan columnas requeridas: {columns}",
+    "duplicado": "Esta evaluación ya está cargada",
+    "jsonInvalido": "El archivo JSON no es válido",
+    "storageLimit": "Se ha alcanzado el límite de almacenamiento",
+    "archivoVacio": "El archivo está vacío"
+  },
+  "success": {
+    "csvCargado": "CSV cargado correctamente",
+    "jsonImportado": "Datos importados correctamente",
+    "evaluacionEliminada": "Evaluación eliminada",
+    "datosExportados": "Datos exportados correctamente"
+  },
+  "common": {
+    "si": "Sí",
+    "no": "No",
+    "cerrar": "Cerrar",
+    "guardar": "Guardar",
+    "cancelar": "Cancelar",
+    "confirmar": "Confirmar",
+    "todos": "Todos",
+    "notas": "Notas",
+    "media": "Media",
+    "mediana": "Mediana",
+    "moda": "Moda",
+    "min": "Mín",
+    "max": "Máx",
+    "p25": "P25",
+    "p75": "P75",
+    "n": "N",
+    "aprobados": "Aprobados",
+    "suspensos": "Suspensos"
+  }
+}
