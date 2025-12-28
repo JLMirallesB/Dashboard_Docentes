@@ -4,7 +4,7 @@
 
 const UI = (function() {
     /**
-     * Crea una tarjeta de KPI
+     * Crea una tarjeta de KPI con línea decorativa
      */
     function createKPICard(options) {
         const {
@@ -17,7 +17,6 @@ const UI = (function() {
         } = options;
 
         const indicatorClass = indicator ? `kpi-card--${indicator}` : '';
-        const indicatorBar = indicator ? `<div class="kpi-card__indicator kpi-card__indicator--${indicator}"></div>` : '';
 
         let trendHTML = '';
         if (trend) {
@@ -33,9 +32,14 @@ const UI = (function() {
             miniChartHTML = `<canvas id="${miniChart.id}" width="60" height="60" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%);"></canvas>`;
         }
 
+        // Línea decorativa según el indicador
+        let lineClass = 'card__line';
+        if (indicator === 'danger') lineClass = 'card__line card__line--danger';
+        else if (indicator === 'warning') lineClass = 'card__line card__line--warning';
+        else if (indicator === 'success') lineClass = 'card__line card__line--success';
+
         return `
             <div class="card kpi-card ${indicatorClass}">
-                ${indicatorBar}
                 <div class="card__header">
                     <span class="card__title">${title}</span>
                 </div>
@@ -43,6 +47,7 @@ const UI = (function() {
                 ${subtitle ? `<div class="card__subtitle">${subtitle}</div>` : ''}
                 ${trendHTML}
                 ${miniChartHTML}
+                <div class="${lineClass}"></div>
             </div>
         `;
     }

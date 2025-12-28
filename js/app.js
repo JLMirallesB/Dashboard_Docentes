@@ -70,11 +70,28 @@ const App = (function() {
                 e.preventDefault();
                 const view = link.getAttribute('data-view');
                 navigateTo(view);
+                // Cerrar sidebar en móvil
+                closeMobileSidebar();
             });
         });
 
-        // Toggle tema
-        document.getElementById('btn-theme').addEventListener('click', toggleTheme);
+        // Toggle sidebar colapsable
+        const btnCollapse = document.getElementById('btn-collapse');
+        if (btnCollapse) {
+            btnCollapse.addEventListener('click', toggleSidebar);
+        }
+
+        // Menú hamburguesa para móvil
+        const btnMenu = document.getElementById('btn-menu');
+        if (btnMenu) {
+            btnMenu.addEventListener('click', toggleMobileSidebar);
+        }
+
+        // Overlay del sidebar (móvil)
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', closeMobileSidebar);
+        }
 
         // Toggle idioma
         document.getElementById('btn-lang').addEventListener('click', () => {
@@ -196,6 +213,7 @@ const App = (function() {
         const btnAddCsv = document.getElementById('btn-add-csv');
         const btnExport = document.getElementById('btn-export');
         const btnEvaluaciones = document.getElementById('btn-evaluaciones');
+        const btnMenu = document.getElementById('btn-menu');
 
         if (show) {
             sidebar.style.display = 'block';
@@ -203,28 +221,70 @@ const App = (function() {
             btnAddCsv.style.display = 'flex';
             btnExport.style.display = 'flex';
             btnEvaluaciones.style.display = 'flex';
+            if (btnMenu) btnMenu.style.display = '';
         } else {
             sidebar.style.display = 'none';
             mainContent.classList.add('main-content--full');
             btnAddCsv.style.display = 'none';
             btnExport.style.display = 'none';
             btnEvaluaciones.style.display = 'none';
+            if (btnMenu) btnMenu.style.display = 'none';
         }
     }
 
     /**
-     * Toggle tema claro/oscuro
+     * Toggle sidebar colapsable (desktop)
      */
-    function toggleTheme() {
-        const html = document.documentElement;
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('dashboard_theme', newTheme);
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+        const isCollapsed = sidebar.classList.toggle('sidebar--collapsed');
 
-        // Actualizar gráficos si existen
-        if (typeof Charts !== 'undefined' && Charts.updateTheme) {
-            Charts.updateTheme(newTheme);
+        if (isCollapsed) {
+            mainContent.classList.add('main-content--collapsed');
+        } else {
+            mainContent.classList.remove('main-content--collapsed');
+        }
+
+        // Guardar estado
+        localStorage.setItem('sidebar_collapsed', isCollapsed);
+    }
+
+    /**
+     * Toggle sidebar en móvil
+     */
+    function toggleMobileSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const isOpen = sidebar.classList.toggle('sidebar--open');
+
+        if (isOpen) {
+            overlay.classList.add('sidebar-overlay--visible');
+        } else {
+            overlay.classList.remove('sidebar-overlay--visible');
+        }
+    }
+
+    /**
+     * Cierra el sidebar en móvil
+     */
+    function closeMobileSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        sidebar.classList.remove('sidebar--open');
+        overlay.classList.remove('sidebar-overlay--visible');
+    }
+
+    /**
+     * Restaura el estado del sidebar
+     */
+    function restoreSidebarState() {
+        const isCollapsed = localStorage.getItem('sidebar_collapsed') === 'true';
+        if (isCollapsed) {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('main-content');
+            sidebar.classList.add('sidebar--collapsed');
+            mainContent.classList.add('main-content--collapsed');
         }
     }
 
@@ -514,11 +574,8 @@ const App = (function() {
 
     // Inicializar cuando el DOM esté listo
     document.addEventListener('DOMContentLoaded', () => {
-        // Recuperar tema
-        const savedTheme = localStorage.getItem('dashboard_theme');
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        }
+        // Restaurar estado del sidebar
+        restoreSidebarState();
 
         // Esperar a que i18n esté listo
         setTimeout(init, 100);
