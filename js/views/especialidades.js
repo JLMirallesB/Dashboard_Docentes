@@ -124,6 +124,32 @@ const EspecialidadesView = (function() {
                 })}
             </div>
 
+            <div class="card mt-md">
+                <h4 class="mb-sm">${I18n.t('dashboard.percentiles')}</h4>
+                <div class="percentiles-row">
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.min')}</span>
+                        <span class="percentile-value">${UI.formatNumber(especialidad.Min)}</span>
+                    </div>
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.p25')}</span>
+                        <span class="percentile-value">${UI.formatNumber(especialidad.P25)}</span>
+                    </div>
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.mediana')}</span>
+                        <span class="percentile-value">${UI.formatNumber(especialidad.Mediana)}</span>
+                    </div>
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.p75')}</span>
+                        <span class="percentile-value">${UI.formatNumber(especialidad.P75)}</span>
+                    </div>
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.max')}</span>
+                        <span class="percentile-value">${UI.formatNumber(especialidad.Max)}</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="chart-container mt-lg">
                 <h3 class="chart-container__title">${I18n.t('dashboard.distribucion')}</h3>
                 <div class="chart-wrapper">
@@ -186,6 +212,12 @@ const EspecialidadesView = (function() {
                 key: 'Desv_Tipica',
                 align: 'center',
                 format: (val) => UI.formatNumber(val)
+            },
+            {
+                label: I18n.t('especialidades.tabla.coefVar'),
+                key: 'Coef_Variacion',
+                align: 'center',
+                format: (val) => val ? UI.formatNumber(val) + '%' : '-'
             }
         ];
 

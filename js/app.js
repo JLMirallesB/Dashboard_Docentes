@@ -50,13 +50,13 @@ const App = (function() {
      * Carga datos guardados en localStorage
      */
     function loadStoredData() {
-        const data = Storage.getAll();
-        if (data && data.evaluaciones && data.evaluaciones.length > 0) {
-            state.evaluaciones = data.evaluaciones;
-            state.profesor = data.profesor;
-            state.etapa = data.etapa;
-            state.centro = data.centro;
-            state.selectedEvaluacion = data.evaluaciones[0];
+        const stored = Storage.getAll();
+        if (stored && stored.evaluaciones && stored.evaluaciones.length > 0) {
+            state.evaluaciones = stored.evaluaciones;
+            state.profesor = stored.profesor;
+            state.etapa = stored.etapa;
+            state.centro = stored.centro;
+            state.selectedEvaluacion = stored.evaluaciones[0];
         }
     }
 

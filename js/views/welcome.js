@@ -35,20 +35,31 @@ const WelcomeView = (function() {
                     <span data-i18n="welcome.or">${I18n.t('welcome.or')}</span>
                 </div>
 
-                <button class="btn btn--lg" id="btn-import-json">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    <span data-i18n="welcome.importJson">${I18n.t('welcome.importJson')}</span>
-                </button>
+                <div class="welcome__buttons">
+                    <button class="btn btn--lg" id="btn-import-json">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span data-i18n="welcome.importJson">${I18n.t('welcome.importJson')}</span>
+                    </button>
+
+                    <button class="btn btn--lg btn--secondary" id="btn-load-example">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="10 8 16 12 10 16 10 8"/>
+                        </svg>
+                        <span data-i18n="welcome.loadExample">${I18n.t('welcome.loadExample')}</span>
+                    </button>
+                </div>
             </div>
         `;
 
         // Configurar eventos
         setupDropzone();
         setupImportButton();
+        setupExampleButton();
     }
 
     /**
@@ -108,6 +119,70 @@ const WelcomeView = (function() {
         btn.addEventListener('click', () => {
             fileInput.click();
         });
+    }
+
+    /**
+     * Configura el botón de cargar ejemplo
+     */
+    function setupExampleButton() {
+        const btn = document.getElementById('btn-load-example');
+        if (!btn) return;
+
+        btn.addEventListener('click', async () => {
+            try {
+                // Cargar el CSV de ejemplo desde la carpeta data
+                const response = await fetch('data/ejemplo.csv');
+                if (!response.ok) {
+                    throw new Error('No se pudo cargar el archivo de ejemplo');
+                }
+
+                const csvText = await response.text();
+
+                // Crear un objeto File para usar con el parser existente
+                const blob = new Blob([csvText], { type: 'text/csv' });
+                const file = new File([blob], 'ejemplo.csv', { type: 'text/csv' });
+
+                // Parsear el CSV
+                const result = await CSVParser.parse(file);
+
+                // Cargar directamente con trimestre T1 (ejemplo)
+                loadExampleData(result);
+            } catch (error) {
+                console.error('Error loading example:', error);
+                UI.showToast(I18n.t('errors.csvInvalido'), 'error');
+            }
+        });
+    }
+
+    /**
+     * Carga los datos de ejemplo directamente
+     */
+    function loadExampleData(csvData) {
+        const trimestre = 'T1';
+
+        // Crear evaluación
+        const evaluacion = {
+            id: `${csvData.etapa}_${csvData.año}_${csvData.fecha}_${trimestre}`,
+            etapa: csvData.etapa,
+            año: csvData.año,
+            fecha: csvData.fecha,
+            trimestre: trimestre,
+            datos: csvData.datos
+        };
+
+        // Guardar en storage
+        const currentData = { evaluaciones: [] };
+        currentData.evaluaciones.push(evaluacion);
+        currentData.profesor = csvData.profesor;
+        currentData.etapa = csvData.etapa;
+        currentData.centro = csvData.centro;
+
+        Storage.saveAll(currentData);
+
+        UI.showToast(I18n.t('success.csvCargado'), 'success');
+
+        // Recargar la app
+        location.reload();
     }
 
     /**

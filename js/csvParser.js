@@ -198,6 +198,13 @@ const CSVParser = (function() {
                 return;
             }
 
+            // Filtrar registros con N=0 o null (excepto Global que usa diferente estructura)
+            // Para ANOVA, N representa Grupos_Con_Datos - si es 0, no hay datos válidos
+            const n = parseNumericValue(normalizedRow.N);
+            if (tipo !== 'Global' && (n === null || n === 0)) {
+                return;
+            }
+
             // Separar ANOVA de datos normales
             if (tipo.startsWith('ANOVA')) {
                 anovaData.push(processAnovaRow(normalizedRow));
@@ -216,9 +223,28 @@ const CSVParser = (function() {
         // Extraer metadatos del primer registro normal o ANOVA
         const firstRow = normalData[0] || anovaData[0];
 
+        // Detectar etapas disponibles (excluyendo MIXTO y vacías)
+        const etapasSet = new Set(
+            normalData
+                .map(r => r.Etapa)
+                .filter(e => e && e !== 'MIXTO' && e !== '' && e !== 'TODOS')
+        );
+        const etapasDisponibles = Array.from(etapasSet).sort();
+
+        // Determinar etapa principal
+        let etapaPrincipal;
+        if (etapasDisponibles.length === 0) {
+            etapaPrincipal = cleanString(firstRow.Etapa) || 'MIXTO';
+        } else if (etapasDisponibles.includes('EEM') && etapasDisponibles.includes('EPM')) {
+            etapaPrincipal = 'MIXTO';
+        } else {
+            etapaPrincipal = etapasDisponibles[0];
+        }
+
         return {
             profesor: cleanString(firstRow.Profesor),
-            etapa: cleanString(firstRow.Etapa),
+            etapa: etapaPrincipal,
+            etapasDisponibles: etapasDisponibles,
             año: cleanString(firstRow.Año_Academico),
             centro: cleanString(firstRow.Centro),
             fecha: cleanString(firstRow.Fecha_Generacion) || new Date().toISOString().split('T')[0],
@@ -379,6 +405,18 @@ const CSVParser = (function() {
         return { cursos, especialidades };
     }
 
+    /**
+     * Obtiene las etapas únicas de los datos
+     */
+    function getEtapasUnicas(data) {
+        const etapas = new Set(
+            data
+                .map(r => r.Etapa)
+                .filter(e => e && e !== '' && e !== 'TODOS' && e !== 'MIXTO')
+        );
+        return Array.from(etapas).sort();
+    }
+
     // API pública
     return {
         parse,
@@ -391,6 +429,7 @@ const CSVParser = (function() {
         getCursos,
         getEspecialidades,
         getMatriz,
-        getANOVA
+        getANOVA,
+        getEtapasUnicas
     };
 })();

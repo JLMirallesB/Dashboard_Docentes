@@ -1,0 +1,91 @@
+Tipo_Agregacion;Profesor;Etapa;Año_Academico;Centro;Fecha_Generacion;Dimension1;Dimension2;N;Sin_Evaluar;Media;Desv_Tipica;Coef_Variacion;Moda;Mediana;P25;P75;Min;Max;Notas_1;Notas_2;Notas_3;Notas_4;Notas_5;Notas_6;Notas_7;Notas_8;Notas_9;Notas_10;Aprobados;Suspensos;Pct_Aprobados;Pct_Suspensos
+Global;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;TODOS;TODOS;185;0;7,24;1,52;21,0;7;7;6;8;2;10;1;1;2;5;22;28;58;48;18;2;175;10;94,6;5,4
+Por_Asignatura;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;LENGUAJE MUSICAL;TODOS;65;0;7,12;1,45;20,4;7;7;6;8;3;10;0;0;1;3;10;12;18;14;6;1;61;4;93,8;6,2
+Por_Asignatura;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;CONJUNTO INSTRUMENTAL;TODOS;42;0;7,62;1,38;18,1;8;8;7;9;4;10;0;0;0;1;4;6;12;12;6;1;41;1;97,6;2,4
+Por_Asignatura;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;ORQUESTA;TODOS;78;0;7,08;1,65;23,3;7;7;6;8;2;10;1;1;1;1;8;10;28;22;6;0;73;5;93,6;6,4
+Por_Asignatura;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;0;TODOS;0;0;;;;;;;;;;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+Por_Curso;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;1EEM;TODOS;28;0;7,5;1,35;18,0;8;8;7;8;4;10;0;0;0;1;3;4;8;8;3;1;27;1;96,4;3,6
+Por_Curso;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;2EEM;TODOS;22;0;7,18;1,42;19,8;7;7;6;8;4;9;0;0;0;1;3;4;6;6;2;0;21;1;95,5;4,5
+Por_Curso;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;3EEM;TODOS;18;0;7,33;1,28;17,5;7;7;6;8;5;9;0;0;0;0;2;3;6;5;2;0;18;0;100;0
+Por_Curso;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;4EEM;TODOS;15;0;7,6;1,18;15,5;8;8;7;8;5;10;0;0;0;0;1;2;4;6;1;1;15;0;100;0
+Por_Curso;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;TODOS;35;0;6,94;1,68;24,2;7;7;6;8;2;10;1;0;1;2;5;6;10;7;3;0;32;3;91,4;8,6
+Por_Curso;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;TODOS;28;0;7,14;1,55;21,7;7;7;6;8;3;10;0;1;0;1;4;5;8;6;2;1;26;2;92,9;7,1
+Por_Curso;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;3EPM;TODOS;22;0;7,09;1,62;22,9;7;7;6;8;2;9;0;0;1;1;3;4;6;5;2;0;20;2;90,9;9,1
+Por_Curso;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;4EPM;TODOS;17;0;7,35;1,48;20,1;7;7;6;8;4;10;0;0;0;1;2;2;5;5;1;1;16;1;94,1;5,9
+Por_Curso;MARÍA GARCÍA LÓPEZ;;2025-2026;Conservatorio Municipal;2026-01-15;;TODOS;;;;;;;;;;;;;;;;;;;;;;;;;
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;PIANO;TODOS;32;0;7,28;1,45;19,9;7;7;6;8;4;10;0;0;0;2;4;6;10;7;2;1;30;2;93,8;6,3
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;VIOLÍN;TODOS;28;0;6,89;1,72;25,0;7;7;6;8;2;10;1;0;1;2;4;5;8;5;2;0;25;3;89,3;10,7
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;GUITARRA;TODOS;24;0;7,42;1,32;17,8;8;8;7;8;5;10;0;0;0;0;3;4;6;8;2;1;24;0;100;0
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;FLAUTA;TODOS;22;0;7,36;1,38;18,8;7;7;6;8;4;10;0;0;0;1;2;4;6;6;2;1;21;1;95,5;4,5
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;CLARINETE;TODOS;18;0;7,11;1,52;21,4;7;7;6;8;3;9;0;0;1;1;2;3;5;5;1;0;17;1;94,4;5,6
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;SAXOFÓN;TODOS;16;0;7,56;1,26;16,7;8;8;7;8;5;10;0;0;0;0;1;2;5;6;1;1;16;0;100;0
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;TROMPETA;TODOS;14;0;7,07;1,64;23,2;7;7;6;8;3;10;0;0;1;0;2;3;4;3;0;1;13;1;92,9;7,1
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;PERCUSIÓN;TODOS;12;0;7,67;1,15;15,0;8;8;7;8;6;10;0;0;0;0;0;2;4;4;1;1;12;0;100;0
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;VIOLONCELLO;TODOS;10;0;7,2;1,48;20,6;7;7;6;8;4;9;0;0;0;1;1;1;4;2;1;0;9;1;90;10
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;TROMPA;TODOS;9;0;7,44;1,24;16,7;7;7;7;8;5;9;0;0;0;0;1;1;4;2;1;0;9;0;100;0
+Por_Especialidad;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;;TODOS;;;;;;;;;;;;;;;;;;;;;;;;;
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;1EEM;PIANO;6;0;7,5;1,22;16,3;8;8;7;8;6;9;0;0;0;0;0;1;2;2;1;0;6;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;1EEM;VIOLÍN;5;0;7,2;1,48;20,6;7;7;6;8;5;9;0;0;0;0;1;1;1;2;0;0;5;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;1EEM;GUITARRA;4;0;7,75;1,26;16,3;8;8;7;9;6;9;0;0;0;0;0;1;1;1;1;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;1EEM;FLAUTA;4;0;7,5;1,29;17,2;8;8;6;8;6;9;0;0;0;0;0;1;1;2;0;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;1EEM;CLARINETE;3;0;7,33;1,53;20,9;7;7;6;9;6;9;0;0;0;0;0;1;1;0;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;1EEM;SAXOFÓN;3;0;8;1,0;12,5;8;8;7;9;7;9;0;0;0;0;0;0;1;1;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;1EEM;PERCUSIÓN;3;0;8;0,82;10,3;8;8;8;8;7;9;0;0;0;0;0;0;1;1;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;2EEM;PIANO;5;0;7,2;1,48;20,6;7;7;6;8;5;9;0;0;0;0;1;1;1;2;0;0;5;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;2EEM;VIOLÍN;4;0;7;1,41;20,1;7;7;6;8;5;8;0;0;0;0;1;0;2;1;0;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;2EEM;GUITARRA;4;0;7,5;1,29;17,2;8;8;6;8;6;9;0;0;0;0;0;1;1;2;0;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;2EEM;FLAUTA;3;0;7;1,0;14,3;7;7;6;8;6;8;0;0;0;0;0;1;1;1;0;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;2EEM;CLARINETE;3;0;7;1,73;24,7;7;7;5;9;5;9;0;0;0;0;1;0;1;0;1;0;2;1;66,7;33,3
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;2EEM;SAXOFÓN;3;0;7,67;1,15;15,0;8;8;7;8;6;9;0;0;0;0;0;1;1;0;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;3EEM;PIANO;4;0;7,5;1,29;17,2;8;8;6;8;6;9;0;0;0;0;0;1;1;2;0;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;3EEM;VIOLÍN;3;0;7;1,0;14,3;7;7;6;8;6;8;0;0;0;0;0;1;1;1;0;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;3EEM;GUITARRA;3;0;7,67;1,15;15,0;8;8;7;9;6;9;0;0;0;0;0;0;2;0;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;3EEM;FLAUTA;3;0;7,33;1,15;15,7;7;7;6;8;6;8;0;0;0;0;0;1;1;1;0;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;3EEM;CLARINETE;2;0;7,5;0,71;9,5;8;8;7;8;7;8;0;0;0;0;0;0;1;1;0;0;2;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;3EEM;PERCUSIÓN;3;0;7,33;1,53;20,9;7;7;6;9;6;9;0;0;0;0;0;1;1;0;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;4EEM;PIANO;3;0;7,67;1,53;20,0;8;8;6;9;6;9;0;0;0;0;0;1;0;1;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;4EEM;VIOLÍN;3;0;7,33;1,15;15,7;7;7;6;8;6;8;0;0;0;0;0;1;1;1;0;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;4EEM;GUITARRA;3;0;8;1,0;12,5;8;8;7;9;7;9;0;0;0;0;0;0;1;1;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;4EEM;FLAUTA;2;0;8;1,41;17,7;8;8;7;9;7;9;0;0;0;0;0;0;1;0;1;0;2;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;4EEM;SAXOFÓN;2;0;8;0;0;8;8;8;8;8;8;0;0;0;0;0;0;0;2;0;0;2;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EEM;2025-2026;Conservatorio Municipal;2026-01-15;4EEM;PERCUSIÓN;2;0;7,5;0,71;9,5;8;8;7;8;7;8;0;0;0;0;0;0;1;1;0;0;2;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;PIANO;5;0;6,8;1,79;26,3;7;7;5;8;4;9;0;0;0;1;1;1;1;1;1;0;4;1;80;20
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;VIOLÍN;5;0;6,6;1,82;27,6;7;7;5;8;4;9;0;0;0;1;1;1;1;1;1;0;4;1;80;20
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;GUITARRA;4;0;7,25;1,5;20,7;7;7;6;9;6;9;0;0;0;0;0;2;1;0;1;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;FLAUTA;4;0;7,25;1,26;17,4;7;7;6;8;6;9;0;0;0;0;0;1;2;0;1;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;CLARINETE;4;0;7;1,83;26,1;7;7;5;9;5;9;0;0;0;0;1;1;1;0;1;0;3;1;75;25
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;SAXOFÓN;3;0;7,33;1,53;20,9;7;7;6;9;6;9;0;0;0;0;0;1;1;0;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;TROMPETA;4;0;6,75;1,71;25,3;7;7;5;8;5;9;0;0;0;0;1;1;1;0;1;0;3;1;75;25
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;PERCUSIÓN;3;0;7,67;1,15;15,0;8;8;7;9;6;9;0;0;0;0;0;1;0;1;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;1EPM;VIOLONCELLO;3;0;7;1,73;24,7;7;7;5;9;5;9;0;0;0;0;1;0;1;0;1;0;2;1;66,7;33,3
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;PIANO;4;0;7,25;1,5;20,7;7;7;6;9;6;9;0;0;0;0;0;2;1;0;1;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;VIOLÍN;4;0;6,75;1,89;28,0;7;7;5;9;4;9;0;0;0;1;1;0;1;0;1;0;3;1;75;25
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;GUITARRA;3;0;7,33;1,53;20,9;7;7;6;9;6;9;0;0;0;0;0;1;1;0;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;FLAUTA;3;0;7,33;1,15;15,7;7;7;6;8;6;8;0;0;0;0;0;1;1;1;0;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;CLARINETE;3;0;7;1,73;24,7;7;7;5;9;5;9;0;0;0;0;1;0;1;0;1;0;2;1;66,7;33,3
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;SAXOFÓN;3;0;7,67;1,15;15,0;8;8;7;9;6;9;0;0;0;0;0;1;0;1;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;TROMPETA;3;0;7;1,73;24,7;7;7;5;9;5;9;0;0;0;0;1;0;1;0;1;0;2;1;66,7;33,3
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;TROMPA;3;0;7,33;1,53;20,9;7;7;6;9;6;9;0;0;0;0;0;1;1;0;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;2EPM;VIOLONCELLO;2;0;7;1,41;20,1;7;7;6;8;6;8;0;0;0;0;0;1;0;1;0;0;2;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;3EPM;PIANO;4;0;7,25;1,5;20,7;7;7;6;9;6;9;0;0;0;0;0;2;1;0;1;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;3EPM;VIOLÍN;4;0;6,5;1,91;29,4;6;6;5;8;4;9;0;0;0;1;1;1;0;0;1;0;3;1;75;25
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;3EPM;GUITARRA;3;0;7,33;1,15;15,7;7;7;6;8;6;8;0;0;0;0;0;1;1;1;0;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;3EPM;FLAUTA;3;0;7,67;1,53;20,0;8;8;6;9;6;9;0;0;0;0;0;1;0;1;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;3EPM;CLARINETE;3;0;7;2,0;28,6;7;7;5;9;5;9;0;0;0;0;1;0;1;0;1;0;2;1;66,7;33,3
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;3EPM;TROMPETA;3;0;7,33;1,53;20,9;7;7;6;9;6;9;0;0;0;0;0;1;1;0;1;0;3;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;3EPM;TROMPA;2;0;7,5;0,71;9,5;8;8;7;8;7;8;0;0;0;0;0;0;1;1;0;0;2;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;4EPM;PIANO;5;0;7,4;1,67;22,6;7;7;6;9;5;10;0;0;0;0;1;1;1;1;0;1;4;1;80;20
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;4EPM;GUITARRA;4;0;7,5;1,29;17,2;8;8;6;9;6;9;0;0;0;0;0;1;1;2;0;0;4;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;4EPM;SAXOFÓN;2;0;7,5;0,71;9,5;8;8;7;8;7;8;0;0;0;0;0;0;1;1;0;0;2;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;4EPM;TROMPETA;2;0;7;1,41;20,1;7;7;6;8;6;8;0;0;0;0;0;1;0;1;0;0;2;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;4EPM;TROMPA;2;0;7,5;2,12;28,3;8;8;5;9;5;9;0;0;0;0;1;0;0;0;1;0;1;1;50;50
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;EPM;2025-2026;Conservatorio Municipal;2026-01-15;4EPM;VIOLONCELLO;2;0;7,5;0,71;9,5;8;8;7;8;7;8;0;0;0;0;0;0;1;1;0;0;2;0;100;0
+Por_Curso_Especialidad;MARÍA GARCÍA LÓPEZ;;2025-2026;Conservatorio Municipal;2026-01-15;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ANOVA_Cursos;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;LENGUAJE MUSICAL;Cursos;8;Sí;0,42;Diferencia pequeña;;;;;;;;;;;;;;;;;;;;;
+ANOVA_Cursos;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;CONJUNTO INSTRUMENTAL;Cursos;6;Sí;0,68;Diferencia notable;;;;;;;;;;;;;;;;;;;;;
+ANOVA_Cursos;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;ORQUESTA;Cursos;8;Sí;0,55;Diferencia notable;;;;;;;;;;;;;;;;;;;;;
+ANOVA_Cursos;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;0;Cursos;0;No;;No calculable;;;;;;;;;;;;;;;;;;;;;
+ANOVA_Especialidades;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;LENGUAJE MUSICAL;Especialidades;10;Sí;0,85;Diferencia notable;;;;;;;;;;;;;;;;;;;;;
+ANOVA_Especialidades;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;CONJUNTO INSTRUMENTAL;Especialidades;8;Sí;0,72;Diferencia notable;;;;;;;;;;;;;;;;;;;;;
+ANOVA_Especialidades;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;ORQUESTA;Especialidades;10;Sí;0,91;Diferencia notable;;;;;;;;;;;;;;;;;;;;;
+ANOVA_Especialidades;MARÍA GARCÍA LÓPEZ;MIXTO;2025-2026;Conservatorio Municipal;2026-01-15;0;Especialidades;0;No;;No calculable;;;;;;;;;;;;;;;;;;;;;

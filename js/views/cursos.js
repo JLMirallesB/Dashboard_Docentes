@@ -78,10 +78,13 @@ const CursosView = (function() {
      */
     function sortCursos(cursos) {
         return [...cursos].sort((a, b) => {
-            const aNum = parseInt(a.Dimension1) || 0;
-            const bNum = parseInt(b.Dimension1) || 0;
-            const aEtapa = a.Dimension1.includes('EEM') ? 0 : 1;
-            const bEtapa = b.Dimension1.includes('EEM') ? 0 : 1;
+            // Determinar etapa: usar campo Etapa si existe, o detectar del nombre
+            const aEtapa = (a.Etapa === 'EEM' || a.Dimension1.includes('EEM')) ? 0 : 1;
+            const bEtapa = (b.Etapa === 'EEM' || b.Dimension1.includes('EEM')) ? 0 : 1;
+
+            // Extraer número del curso (ej: "2EPM" -> 2)
+            const aNum = parseInt(a.Dimension1.replace(/[^\d]/g, '')) || 0;
+            const bNum = parseInt(b.Dimension1.replace(/[^\d]/g, '')) || 0;
 
             if (aEtapa !== bEtapa) return aEtapa - bEtapa;
             return aNum - bNum;
@@ -139,6 +142,32 @@ const CursosView = (function() {
                 })}
             </div>
 
+            <div class="card mt-md">
+                <h4 class="mb-sm">${I18n.t('dashboard.percentiles')}</h4>
+                <div class="percentiles-row">
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.min')}</span>
+                        <span class="percentile-value">${UI.formatNumber(curso.Min)}</span>
+                    </div>
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.p25')}</span>
+                        <span class="percentile-value">${UI.formatNumber(curso.P25)}</span>
+                    </div>
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.mediana')}</span>
+                        <span class="percentile-value">${UI.formatNumber(curso.Mediana)}</span>
+                    </div>
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.p75')}</span>
+                        <span class="percentile-value">${UI.formatNumber(curso.P75)}</span>
+                    </div>
+                    <div class="percentile-item">
+                        <span class="percentile-label">${I18n.t('common.max')}</span>
+                        <span class="percentile-value">${UI.formatNumber(curso.Max)}</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="chart-container mt-lg">
                 <h3 class="chart-container__title">${I18n.t('dashboard.distribucion')}</h3>
                 <div class="chart-wrapper">
@@ -180,6 +209,7 @@ const CursosView = (function() {
     function createCursosTable(cursos, globalData) {
         const headers = [
             { label: I18n.t('cursos.tabla.curso'), key: 'Dimension1' },
+            { label: I18n.t('cursos.tabla.etapa'), key: 'Etapa', align: 'center' },
             { label: I18n.t('cursos.tabla.n'), key: 'N', align: 'center' },
             {
                 label: I18n.t('cursos.tabla.media'),
@@ -201,6 +231,12 @@ const CursosView = (function() {
                 key: 'Desv_Tipica',
                 align: 'center',
                 format: (val) => UI.formatNumber(val)
+            },
+            {
+                label: I18n.t('cursos.tabla.coefVar'),
+                key: 'Coef_Variacion',
+                align: 'center',
+                format: (val) => val ? UI.formatNumber(val) + '%' : '-'
             }
         ];
 

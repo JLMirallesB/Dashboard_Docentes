@@ -61,21 +61,33 @@ const MatrizView = (function() {
      * Procesa los datos para crear la estructura de matriz
      */
     function processMatrixData(data) {
-        // Obtener cursos y especialidades únicos
-        const cursosSet = new Set();
+        // Obtener cursos y especialidades únicos con sus etapas
+        const cursosMap = new Map(); // curso -> etapa
         const especialidadesSet = new Set();
 
         data.forEach(row => {
-            if (row.Dimension1) cursosSet.add(row.Dimension1);
+            if (row.Dimension1) {
+                // Guardar la etapa asociada al curso
+                if (!cursosMap.has(row.Dimension1)) {
+                    cursosMap.set(row.Dimension1, row.Etapa || '');
+                }
+            }
             if (row.Dimension2) especialidadesSet.add(row.Dimension2);
         });
 
-        // Ordenar cursos
-        const cursos = Array.from(cursosSet).sort((a, b) => {
-            const aNum = parseInt(a) || 0;
-            const bNum = parseInt(b) || 0;
-            const aEtapa = a.includes('EEM') ? 0 : 1;
-            const bEtapa = b.includes('EEM') ? 0 : 1;
+        // Ordenar cursos usando el campo Etapa o detectando del nombre
+        const cursos = Array.from(cursosMap.keys()).sort((a, b) => {
+            const aEtapaField = cursosMap.get(a);
+            const bEtapaField = cursosMap.get(b);
+
+            // Determinar etapa: usar campo Etapa si existe, o detectar del nombre
+            const aEtapa = (aEtapaField === 'EEM' || a.includes('EEM')) ? 0 : 1;
+            const bEtapa = (bEtapaField === 'EEM' || b.includes('EEM')) ? 0 : 1;
+
+            // Extraer número del curso (ej: "2EPM" -> 2)
+            const aNum = parseInt(a.replace(/[^\d]/g, '')) || 0;
+            const bNum = parseInt(b.replace(/[^\d]/g, '')) || 0;
+
             if (aEtapa !== bEtapa) return aEtapa - bEtapa;
             return aNum - bNum;
         });

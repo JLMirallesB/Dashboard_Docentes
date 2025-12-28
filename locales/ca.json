@@ -22,6 +22,7 @@
     },
     "or": "o",
     "importJson": "Importar dades guardades (JSON)",
+    "loadExample": "Carregar dades d'exemple",
     "noData": "No hi ha dades carregades"
   },
   "trimestre": {
@@ -60,7 +61,8 @@
       "n": "N",
       "media": "Mitjana",
       "aprobados": "% Aprovat",
-      "desviacion": "Desv."
+      "desviacion": "Desv.",
+      "coefVar": "CV%"
     }
   },
   "cursos": {
@@ -70,10 +72,12 @@
     "comparativa": "Comparativa de mitjanes per curs",
     "tabla": {
       "curso": "Curs",
+      "etapa": "Etapa",
       "n": "N",
       "media": "Mitjana",
       "aprobados": "% Aprovat",
-      "desviacion": "Desv."
+      "desviacion": "Desv.",
+      "coefVar": "CV%"
     }
   },
   "especialidades": {
@@ -86,7 +90,8 @@
       "n": "N",
       "media": "Mitjana",
       "aprobados": "% Aprovat",
-      "desviacion": "Desv."
+      "desviacion": "Desv.",
+      "coefVar": "CV%"
     }
   },
   "matriz": {
