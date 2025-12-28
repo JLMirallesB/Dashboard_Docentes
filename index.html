@@ -30,7 +30,10 @@
             <button id="btn-menu" class="btn btn--icon header__menu-btn" title="Menú" aria-label="Menú" style="display: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
-            <h1 class="header__title" data-i18n="app.title">Dashboard Docentes</h1>
+            <div class="header__titles">
+                <h1 class="header__title" data-i18n="app.title">Dashboard Docentes</h1>
+                <p class="header__subtitle" data-i18n="app.subtitle">Para Conservatorios Elementales y Profesionales de Música</p>
+            </div>
         </div>
         <div class="header__actions">
             <button id="btn-add-csv" class="btn btn--icon" title="Añadir CSV" aria-label="Añadir CSV" style="display: none;">
@@ -91,18 +94,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#anova" class="sidebar__link" data-view="anova">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                        <span data-i18n="nav.anova">ANOVA</span>
-                    </a>
-                </li>
-                <li>
                     <a href="#evolucion" class="sidebar__link" data-view="evolucion">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                         <span data-i18n="nav.evolucion">Evolución</span>
                     </a>
                 </li>
             </ul>
+            <div class="sidebar__support">
+                <a class="sidebar__support-link" href="https://ko-fi.com/miralles" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+                    <span data-i18n="support.button">Invítame a un café</span>
+                </a>
+                <span class="sidebar__support-text" data-i18n="support.title">Apoya el proyecto</span>
+            </div>
         </nav>
 
         <!-- Contenido principal -->
@@ -110,6 +114,12 @@
             <!-- El contenido se carga dinámicamente -->
         </main>
     </div>
+    <footer class="app-footer">
+        <p>
+            <span data-i18n="support.footer">¿Te gusta el proyecto? Invítame a un café en</span>
+            <a href="https://ko-fi.com/miralles" target="_blank" rel="noopener noreferrer" data-i18n="support.link">Ko-fi</a>
+        </p>
+    </footer>
 
     <!-- Modal container -->
     <div class="modal-overlay" id="modal-overlay" style="display: none;">

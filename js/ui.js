@@ -305,6 +305,26 @@ const UI = (function() {
         return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => colors[n]);
     }
 
+    /**
+     * Obtiene el mínimo y máximo a partir de la distribución de notas
+     */
+    function getMinMaxFromNotas(row) {
+        if (!row) return { min: null, max: null };
+
+        let min = null;
+        let max = null;
+
+        for (let i = 1; i <= 10; i++) {
+            const count = row[`Notas_${i}`];
+            if (count && count > 0) {
+                if (min === null) min = i;
+                max = i;
+            }
+        }
+
+        return { min, max };
+    }
+
     // API pública
     return {
         createKPICard,
@@ -322,6 +342,7 @@ const UI = (function() {
         createEmptyState,
         createSectionHeader,
         getGradeColors,
-        getGradeColorsArray
+        getGradeColorsArray,
+        getMinMaxFromNotas
     };
 })();

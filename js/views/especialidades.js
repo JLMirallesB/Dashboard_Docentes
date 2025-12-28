@@ -94,6 +94,9 @@ const EspecialidadesView = (function() {
         const diffMedia = especialidad.Media - (globalData?.Media || 0);
         const diffText = diffMedia >= 0 ? `+${diffMedia.toFixed(2)}` : diffMedia.toFixed(2);
         const diffClass = diffMedia >= 0 ? 'text-success' : 'text-danger';
+        const distMinMax = UI.getMinMaxFromNotas(especialidad);
+        const minValue = distMinMax.min !== null ? distMinMax.min : especialidad.Min;
+        const maxValue = distMinMax.max !== null ? distMinMax.max : especialidad.Max;
 
         detailContainer.innerHTML = `
             <div class="kpi-grid mt-lg">
@@ -129,7 +132,7 @@ const EspecialidadesView = (function() {
                 <div class="percentiles-row">
                     <div class="percentile-item">
                         <span class="percentile-label">${I18n.t('common.min')}</span>
-                        <span class="percentile-value">${UI.formatNumber(especialidad.Min)}</span>
+                        <span class="percentile-value">${UI.formatNumber(minValue)}</span>
                     </div>
                     <div class="percentile-item">
                         <span class="percentile-label">${I18n.t('common.p25')}</span>
@@ -145,7 +148,7 @@ const EspecialidadesView = (function() {
                     </div>
                     <div class="percentile-item">
                         <span class="percentile-label">${I18n.t('common.max')}</span>
-                        <span class="percentile-value">${UI.formatNumber(especialidad.Max)}</span>
+                        <span class="percentile-value">${UI.formatNumber(maxValue)}</span>
                     </div>
                 </div>
             </div>

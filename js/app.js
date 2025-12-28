@@ -65,7 +65,7 @@ const App = (function() {
      */
     function setupEventListeners() {
         // Navegación por sidebar
-        document.querySelectorAll('.sidebar__link').forEach(link => {
+        document.querySelectorAll('.sidebar__link[data-view]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const view = link.getAttribute('data-view');
@@ -145,7 +145,7 @@ const App = (function() {
         state.currentView = viewName;
 
         // Actualizar enlaces activos
-        document.querySelectorAll('.sidebar__link').forEach(link => {
+        document.querySelectorAll('.sidebar__link[data-view]').forEach(link => {
             link.classList.remove('sidebar__link--active');
             if (link.getAttribute('data-view') === viewName) {
                 link.classList.add('sidebar__link--active');
@@ -214,10 +214,12 @@ const App = (function() {
         const btnExport = document.getElementById('btn-export');
         const btnEvaluaciones = document.getElementById('btn-evaluaciones');
         const btnMenu = document.getElementById('btn-menu');
+        const footer = document.querySelector('.app-footer');
 
         if (show) {
             sidebar.style.display = 'block';
             mainContent.classList.remove('main-content--full');
+            footer?.classList.remove('app-footer--full');
             btnAddCsv.style.display = 'flex';
             btnExport.style.display = 'flex';
             btnEvaluaciones.style.display = 'flex';
@@ -225,6 +227,7 @@ const App = (function() {
         } else {
             sidebar.style.display = 'none';
             mainContent.classList.add('main-content--full');
+            footer?.classList.add('app-footer--full');
             btnAddCsv.style.display = 'none';
             btnExport.style.display = 'none';
             btnEvaluaciones.style.display = 'none';
@@ -238,12 +241,15 @@ const App = (function() {
     function toggleSidebar() {
         const sidebar = document.getElementById('sidebar');
         const mainContent = document.getElementById('main-content');
+        const footer = document.querySelector('.app-footer');
         const isCollapsed = sidebar.classList.toggle('sidebar--collapsed');
 
         if (isCollapsed) {
             mainContent.classList.add('main-content--collapsed');
+            footer?.classList.add('app-footer--collapsed');
         } else {
             mainContent.classList.remove('main-content--collapsed');
+            footer?.classList.remove('app-footer--collapsed');
         }
 
         // Guardar estado
@@ -283,8 +289,10 @@ const App = (function() {
         if (isCollapsed) {
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('main-content');
+            const footer = document.querySelector('.app-footer');
             sidebar.classList.add('sidebar--collapsed');
             mainContent.classList.add('main-content--collapsed');
+            footer?.classList.add('app-footer--collapsed');
         }
     }
 

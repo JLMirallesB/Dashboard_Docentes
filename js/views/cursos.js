@@ -18,15 +18,18 @@ const CursosView = (function() {
 
         // Obtener datos
         const cursos = CSVParser.getCursos(selectedEvaluacion.datos);
+        const cursoAsignaturas = CSVParser.getCursoAsignaturas(selectedEvaluacion.datos);
         const globalData = CSVParser.getGlobalData(selectedEvaluacion.datos);
 
-        if (!cursos || cursos.length === 0) {
+        const cursosGlobales = cursos.filter(c => !c.Dimension2 || c.Dimension2 === 'TODOS');
+
+        if (!cursosGlobales || cursosGlobales.length === 0) {
             container.innerHTML = UI.createEmptyState(I18n.t('welcome.noData'));
             return;
         }
 
         // Ordenar cursos
-        const cursosOrdenados = sortCursos(cursos);
+        const cursosOrdenados = sortCursos(cursosGlobales);
         const listaCursos = cursosOrdenados.map(c => c.Dimension1);
 
         // Selector
@@ -66,11 +69,11 @@ const CursosView = (function() {
         // Setup selector
         document.getElementById('curso-selector').addEventListener('change', (e) => {
             currentCurso = e.target.value;
-            updateDetail(cursos, globalData);
+            updateDetail(cursosGlobales, cursoAsignaturas, globalData);
         });
 
         // Mostrar detalle inicial
-        updateDetail(cursos, globalData);
+        updateDetail(cursosGlobales, cursoAsignaturas, globalData);
     }
 
     /**
@@ -94,7 +97,7 @@ const CursosView = (function() {
     /**
      * Actualiza el detalle del curso seleccionado
      */
-    function updateDetail(cursos, globalData) {
+    function updateDetail(cursos, cursoAsignaturas, globalData) {
         const detailContainer = document.getElementById('curso-detail');
 
         if (!currentCurso) {
@@ -112,6 +115,14 @@ const CursosView = (function() {
         const diffMedia = curso.Media - (globalData?.Media || 0);
         const diffText = diffMedia >= 0 ? `+${diffMedia.toFixed(2)}` : diffMedia.toFixed(2);
         const diffClass = diffMedia >= 0 ? 'text-success' : 'text-danger';
+        const distMinMax = UI.getMinMaxFromNotas(curso);
+        const minValue = distMinMax.min !== null ? distMinMax.min : curso.Min;
+        const maxValue = distMinMax.max !== null ? distMinMax.max : curso.Max;
+
+        const asignaturasDelCurso = cursoAsignaturas.filter(row => row.Dimension1 === currentCurso);
+        const cursoAsignaturasHtml = asignaturasDelCurso.length > 0
+            ? createCursoAsignaturasTable(asignaturasDelCurso)
+            : `<p class="text-muted">${I18n.t('cursos.noSubjectBreakdown')}</p>`;
 
         detailContainer.innerHTML = `
             <div class="kpi-grid mt-lg">
@@ -147,7 +158,7 @@ const CursosView = (function() {
                 <div class="percentiles-row">
                     <div class="percentile-item">
                         <span class="percentile-label">${I18n.t('common.min')}</span>
-                        <span class="percentile-value">${UI.formatNumber(curso.Min)}</span>
+                        <span class="percentile-value">${UI.formatNumber(minValue)}</span>
                     </div>
                     <div class="percentile-item">
                         <span class="percentile-label">${I18n.t('common.p25')}</span>
@@ -163,7 +174,7 @@ const CursosView = (function() {
                     </div>
                     <div class="percentile-item">
                         <span class="percentile-label">${I18n.t('common.max')}</span>
-                        <span class="percentile-value">${UI.formatNumber(curso.Max)}</span>
+                        <span class="percentile-value">${UI.formatNumber(maxValue)}</span>
                     </div>
                 </div>
             </div>
@@ -173,6 +184,11 @@ const CursosView = (function() {
                 <div class="chart-wrapper">
                     <canvas id="chart-curso-dist"></canvas>
                 </div>
+            </div>
+
+            <div class="card mt-lg">
+                <h3 class="chart-container__title mb-md">${I18n.t('cursos.subjectBreakdownTitle')}</h3>
+                ${cursoAsignaturasHtml}
             </div>
         `;
 
@@ -191,6 +207,46 @@ const CursosView = (function() {
         ];
 
         Charts.createGradeDistribution('chart-curso-dist', notasData);
+    }
+
+    /**
+     * Crea la tabla de asignaturas por curso
+     */
+    function createCursoAsignaturasTable(asignaturas) {
+        const headers = [
+            { label: I18n.t('asignaturas.tabla.asignatura'), key: 'Dimension2' },
+            { label: I18n.t('asignaturas.tabla.n'), key: 'N', align: 'center' },
+            {
+                label: I18n.t('asignaturas.tabla.media'),
+                key: 'Media',
+                align: 'center',
+                format: (val) => {
+                    const color = UI.getColorForValue(val);
+                    return `<span class="text-${color}">${UI.formatNumber(val)}</span>`;
+                }
+            },
+            {
+                label: I18n.t('asignaturas.tabla.aprobados'),
+                key: 'Pct_Aprobados',
+                align: 'center',
+                format: (val) => UI.formatPercent(val)
+            },
+            {
+                label: I18n.t('asignaturas.tabla.desviacion'),
+                key: 'Desv_Tipica',
+                align: 'center',
+                format: (val) => UI.formatNumber(val)
+            },
+            {
+                label: I18n.t('asignaturas.tabla.coefVar'),
+                key: 'Coef_Variacion',
+                align: 'center',
+                format: (val) => val ? UI.formatNumber(val) + '%' : '-'
+            }
+        ];
+
+        const sorted = [...asignaturas].sort((a, b) => (b.Media || 0) - (a.Media || 0));
+        return UI.createDataTable(headers, sorted, { striped: true });
     }
 
     /**

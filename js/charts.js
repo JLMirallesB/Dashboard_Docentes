@@ -278,7 +278,12 @@ const Charts = (function() {
                     legend: { display: false },
                     tooltip: {
                         callbacks: {
-                            label: (context) => `${context.label}: ${context.parsed}`
+                            label: (context) => {
+                                const total = approved + failed;
+                                const value = context.parsed;
+                                const percent = total ? ((value / total) * 100).toFixed(1) : '0.0';
+                                return `${context.label}: ${value} (${percent}%)`;
+                            }
                         }
                     }
                 }

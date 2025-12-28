@@ -1,7 +1,14 @@
 {
   "app": {
     "title": "Dashboard Docents",
+    "subtitle": "Per a Conservatoris Elementals i Professionals de Música",
     "loading": "Carregant..."
+  },
+  "support": {
+    "title": "Dona suport al projecte",
+    "button": "Convida'm a un cafè",
+    "footer": "T'agrada el projecte? Convida'm a un cafè en",
+    "link": "Ko-fi"
   },
   "nav": {
     "dashboard": "Dashboard",
@@ -44,6 +51,7 @@
     },
     "distribucion": "Distribució de Notes",
     "percentiles": "Estadístiques",
+    "percentilesHelp": "Min = nota mínima. P25 i P75 són percentils (25% i 75% de les notes queden per davall).",
     "indicadores": {
       "concentradas": "Notes concentrades",
       "dispersas": "Notes disperses",
@@ -62,7 +70,7 @@
       "media": "Mitjana",
       "aprobados": "% Aprovat",
       "desviacion": "Desv.",
-      "coefVar": "CV%"
+      "coefVar": "CV% (Coef. variació)"
     }
   },
   "cursos": {
@@ -70,6 +78,8 @@
     "select": "Seleccionar curs",
     "all": "Tots els cursos",
     "comparativa": "Comparativa de mitjanes per curs",
+    "subjectBreakdownTitle": "Assignatures del curs",
+    "noSubjectBreakdown": "No hi ha desglossament d'assignatures per a aquest curs en el CSV.",
     "tabla": {
       "curso": "Curs",
       "etapa": "Etapa",
@@ -77,7 +87,7 @@
       "media": "Mitjana",
       "aprobados": "% Aprovat",
       "desviacion": "Desv.",
-      "coefVar": "CV%"
+      "coefVar": "CV% (Coef. variació)"
     }
   },
   "especialidades": {
@@ -91,12 +101,14 @@
       "media": "Mitjana",
       "aprobados": "% Aprovat",
       "desviacion": "Desv.",
-      "coefVar": "CV%"
+      "coefVar": "CV% (Coef. variació)"
     }
   },
   "matriz": {
     "title": "Matriu Curs × Especialitat",
     "subtitle": "Fes clic en una cel·la per a veure detalls",
+    "type": "Seleccionar matriu",
+    "global": "Global",
     "noData": "Sense dades",
     "filtrar": "Ocultar combinacions buides"
   },

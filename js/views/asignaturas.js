@@ -93,6 +93,9 @@ const AsignaturasView = (function() {
         const diffMedia = asignatura.Media - (globalData?.Media || 0);
         const diffText = diffMedia >= 0 ? `+${diffMedia.toFixed(2)}` : diffMedia.toFixed(2);
         const diffClass = diffMedia >= 0 ? 'text-success' : 'text-danger';
+        const distMinMax = UI.getMinMaxFromNotas(asignatura);
+        const minValue = distMinMax.min !== null ? distMinMax.min : asignatura.Min;
+        const maxValue = distMinMax.max !== null ? distMinMax.max : asignatura.Max;
 
         detailContainer.innerHTML = `
             <div class="kpi-grid mt-lg">
@@ -128,7 +131,7 @@ const AsignaturasView = (function() {
                 <div class="percentiles-row">
                     <div class="percentile-item">
                         <span class="percentile-label">${I18n.t('common.min')}</span>
-                        <span class="percentile-value">${UI.formatNumber(asignatura.Min)}</span>
+                        <span class="percentile-value">${UI.formatNumber(minValue)}</span>
                     </div>
                     <div class="percentile-item">
                         <span class="percentile-label">${I18n.t('common.p25')}</span>
@@ -144,7 +147,7 @@ const AsignaturasView = (function() {
                     </div>
                     <div class="percentile-item">
                         <span class="percentile-label">${I18n.t('common.max')}</span>
-                        <span class="percentile-value">${UI.formatNumber(asignatura.Max)}</span>
+                        <span class="percentile-value">${UI.formatNumber(maxValue)}</span>
                     </div>
                 </div>
             </div>

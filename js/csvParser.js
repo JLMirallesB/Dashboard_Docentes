@@ -383,6 +383,32 @@ const CSVParser = (function() {
     }
 
     /**
+     * Obtiene datos de asignaturas por curso
+     * Soporta tipos dedicados y filas Por_Curso con Dimension2 != 'TODOS'
+     */
+    function getCursoAsignaturas(data) {
+        const directTypes = ['Por_Curso_Asignatura', 'Por_Curso_Asignaturas'];
+        const direct = data.filter(row => directTypes.includes(row.Tipo_Agregacion));
+        const prefixed = data.filter(row =>
+            row.Tipo_Agregacion && row.Tipo_Agregacion.startsWith('Por_Curso_Asignatura_')
+        );
+        const fromCursos = data.filter(row =>
+            row.Tipo_Agregacion === 'Por_Curso' &&
+            row.Dimension2 &&
+            row.Dimension2 !== 'TODOS'
+        );
+
+        const combined = [...direct, ...prefixed, ...fromCursos];
+        const seen = new Set();
+        return combined.filter(row => {
+            const key = `${row.Tipo_Agregacion}|${row.Dimension1}|${row.Dimension2}`;
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    }
+
+    /**
      * Obtiene datos por especialidad
      */
     function getEspecialidades(data) {
@@ -394,6 +420,17 @@ const CSVParser = (function() {
      */
     function getMatriz(data) {
         return filterByType(data, 'Por_Curso_Especialidad');
+    }
+
+    /**
+     * Obtiene matrices curso x especialidad agrupadas por tipo
+     */
+    function getMatrices(data) {
+        const matrices = data.filter(row =>
+            row.Tipo_Agregacion && row.Tipo_Agregacion.startsWith('Por_Curso_Especialidad')
+        );
+        const tipos = Array.from(new Set(matrices.map(row => row.Tipo_Agregacion)));
+        return { tipos, matrices };
     }
 
     /**
@@ -427,8 +464,10 @@ const CSVParser = (function() {
         getGlobalData,
         getAsignaturas,
         getCursos,
+        getCursoAsignaturas,
         getEspecialidades,
         getMatriz,
+        getMatrices,
         getANOVA,
         getEtapasUnicas
     };

@@ -4,6 +4,7 @@
 
 const MatrizView = (function() {
     let hideEmpty = false;
+    let currentMatrixType = null;
 
     /**
      * Renderiza la vista
@@ -17,21 +18,34 @@ const MatrizView = (function() {
         }
 
         // Obtener datos de la matriz
-        const matrizData = CSVParser.getMatriz(selectedEvaluacion.datos);
+        const { tipos, matrices } = CSVParser.getMatrices(selectedEvaluacion.datos);
 
-        if (!matrizData || matrizData.length === 0) {
+        if (!matrices || matrices.length === 0) {
             container.innerHTML = UI.createEmptyState(I18n.t('welcome.noData'));
             return;
         }
 
-        // Procesar datos para la matriz
-        const { cursos, especialidades, matrix } = processMatrixData(matrizData);
+        if (!currentMatrixType || !tipos.includes(currentMatrixType)) {
+            currentMatrixType = tipos[0];
+        }
+
+        const selectorHTML = tipos.length > 1 ? UI.createSelector({
+            id: 'matriz-type-selector',
+            label: I18n.t('matriz.type'),
+            options: tipos.map(tipo => ({
+                value: tipo,
+                label: formatMatrixLabel(tipo)
+            })),
+            selected: currentMatrixType
+        }) : '';
 
         container.innerHTML = `
             ${UI.createSectionHeader(
                 I18n.t('matriz.title'),
                 I18n.t('matriz.subtitle')
             )}
+
+            ${selectorHTML}
 
             <div class="form-group">
                 <label class="form-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
@@ -47,14 +61,43 @@ const MatrizView = (function() {
             <div id="cell-detail" class="mt-lg"></div>
         `;
 
-        // Renderizar matriz
-        renderMatrix(cursos, especialidades, matrix, matrizData);
+        // Renderizar matriz inicial
+        renderMatrixByType(matrices);
 
         // Setup toggle
         document.getElementById('hide-empty').addEventListener('change', (e) => {
             hideEmpty = e.target.checked;
-            renderMatrix(cursos, especialidades, matrix, matrizData);
+            renderMatrixByType(matrices);
         });
+
+        // Setup selector si hay múltiples tipos
+        if (tipos.length > 1) {
+            document.getElementById('matriz-type-selector').addEventListener('change', (e) => {
+                currentMatrixType = e.target.value;
+                renderMatrixByType(matrices);
+            });
+        }
+    }
+
+    /**
+     * Renderiza la matriz filtrando por tipo
+     */
+    function renderMatrixByType(matrices) {
+        const filtered = matrices.filter(row => row.Tipo_Agregacion === currentMatrixType);
+        const { cursos, especialidades, matrix } = processMatrixData(filtered);
+        renderMatrix(cursos, especialidades, matrix, filtered);
+    }
+
+    /**
+     * Formatea el nombre del tipo de matriz
+     */
+    function formatMatrixLabel(tipo) {
+        const base = 'Por_Curso_Especialidad';
+        if (tipo === base) return I18n.t('matriz.global');
+        if (tipo.startsWith(`${base}_`)) {
+            return tipo.replace(`${base}_`, '').replace(/_/g, ' ');
+        }
+        return tipo;
     }
 
     /**

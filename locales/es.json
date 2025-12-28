@@ -1,7 +1,14 @@
 {
   "app": {
     "title": "Dashboard Docentes",
+    "subtitle": "Para Conservatorios Elementales y Profesionales de Música",
     "loading": "Cargando..."
+  },
+  "support": {
+    "title": "Apoya el proyecto",
+    "button": "Invítame a un café",
+    "footer": "¿Te gusta el proyecto? Invítame a un café en",
+    "link": "Ko-fi"
   },
   "nav": {
     "dashboard": "Dashboard",
@@ -44,6 +51,7 @@
     },
     "distribucion": "Distribución de Notas",
     "percentiles": "Estadísticas",
+    "percentilesHelp": "Min = nota mínima. P25 y P75 son percentiles (25% y 75% de las notas quedan por debajo).",
     "indicadores": {
       "concentradas": "Notas concentradas",
       "dispersas": "Notas dispersas",
@@ -62,7 +70,7 @@
       "media": "Media",
       "aprobados": "% Aprob.",
       "desviacion": "Desv.",
-      "coefVar": "CV%"
+      "coefVar": "CV% (Coef. variación)"
     }
   },
   "cursos": {
@@ -70,6 +78,8 @@
     "select": "Seleccionar curso",
     "all": "Todos los cursos",
     "comparativa": "Comparativa de medias por curso",
+    "subjectBreakdownTitle": "Asignaturas del curso",
+    "noSubjectBreakdown": "No hay desglose de asignaturas para este curso en el CSV.",
     "tabla": {
       "curso": "Curso",
       "etapa": "Etapa",
@@ -77,7 +87,7 @@
       "media": "Media",
       "aprobados": "% Aprob.",
       "desviacion": "Desv.",
-      "coefVar": "CV%"
+      "coefVar": "CV% (Coef. variación)"
     }
   },
   "especialidades": {
@@ -91,12 +101,14 @@
       "media": "Media",
       "aprobados": "% Aprob.",
       "desviacion": "Desv.",
-      "coefVar": "CV%"
+      "coefVar": "CV% (Coef. variación)"
     }
   },
   "matriz": {
     "title": "Matriz Curso × Especialidad",
     "subtitle": "Haz clic en una celda para ver detalles",
+    "type": "Seleccionar matriz",
+    "global": "Global",
     "noData": "Sin datos",
     "filtrar": "Ocultar combinaciones vacías"
   },

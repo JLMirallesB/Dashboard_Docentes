@@ -69,6 +69,7 @@ const DashboardView = (function() {
             <div class="card">
                 <h3 class="chart-container__title">${I18n.t('dashboard.percentiles')}</h3>
                 ${createPercentilesTable(globalData)}
+                <p class="text-muted text-sm mt-sm">${I18n.t('dashboard.percentilesHelp')}</p>
             </div>
         `;
 
@@ -102,8 +103,7 @@ const DashboardView = (function() {
                 title: I18n.t('dashboard.kpi.aprobados'),
                 value: UI.formatPercent(data.Pct_Aprobados),
                 subtitle: `${data.Aprobados || 0} ${I18n.t('common.aprobados').toLowerCase()}`,
-                indicator: 'success',
-                miniChart: { id: 'mini-chart-aprobados' }
+                indicator: 'success'
             })}
 
             ${UI.createKPICard({
@@ -125,6 +125,9 @@ const DashboardView = (function() {
      * Crea la tabla de percentiles
      */
     function createPercentilesTable(data) {
+        const distMinMax = UI.getMinMaxFromNotas(data);
+        const minValue = distMinMax.min !== null ? distMinMax.min : data.Min;
+        const maxValue = distMinMax.max !== null ? distMinMax.max : data.Max;
         const headers = [
             { label: I18n.t('common.min'), key: 'min', align: 'center' },
             { label: I18n.t('common.p25'), key: 'p25', align: 'center' },
@@ -135,11 +138,11 @@ const DashboardView = (function() {
         ];
 
         const rows = [{
-            min: data.Min,
+            min: minValue,
             p25: UI.formatNumber(data.P25),
             mediana: UI.formatNumber(data.Mediana),
             p75: UI.formatNumber(data.P75),
-            max: data.Max,
+            max: maxValue,
             moda: data.Moda
         }];
 
@@ -168,11 +171,6 @@ const DashboardView = (function() {
 
         // Gráfico de aprobados/suspensos
         Charts.createDoughnut('chart-aprobados', data.Aprobados || 0, data.Suspensos || 0);
-
-        // Mini chart en KPI card
-        setTimeout(() => {
-            Charts.createMiniDoughnut('mini-chart-aprobados', data.Pct_Aprobados || 0);
-        }, 100);
     }
 
     // API pública
